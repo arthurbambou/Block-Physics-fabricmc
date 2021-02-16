@@ -133,7 +133,7 @@ public class BlockHandler {
         BlockState state = world.getBlockState(pos);
         FallingBlockEntity fallingBlockEntity = new FallingBlockEntity(world, (double)pos.getX() + 0.5D, pos.getY(), (double)pos.getZ() + 0.5D, state);
         fallingBlockEntity.timeFalling = 1;
-        fallingBlockEntity.setHurtEntities(true);
+        fallingBlockEntity.setHurtEntities(2.0F, 40);
         world.setBlockState(pos,Blocks.AIR.getDefaultState());
         world.spawnEntity(fallingBlockEntity);
     }
