@@ -154,7 +154,7 @@ public class BlockHandler {
         Block block = state.getBlock();
         if (block.getBlastResistance() < 1200 && blockViable(world,pos)) {
             if (!blockNotFall(world,pos.down(),block) && !scan(world,pos)) {
-                if (!block.hasBlockEntity()) {
+                if (world.getBlockEntity(pos) == null) {
                     fall(world, pos);
                 } else {
                     world.breakBlock(pos,true);
